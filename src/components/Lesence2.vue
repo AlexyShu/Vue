@@ -36,6 +36,13 @@
                     >
                         Уменьшение
                     </button>
+                    <button
+                        type="button"
+                        :class="imgFilters.shadow ? 'active' : ''"
+                        @click="imgFilters.shadow = !imgFilters.shadow"
+                    >
+                        Тень
+                    </button>
                 </div>
 
                 <h2>Размер</h2>
@@ -60,10 +67,20 @@
                             :max="imgSizes.maxHeight"
                         >
                     </label>
+                    <label>
+                        Угол: {{ Rotate.currentValue }}
+                        <input
+                        type="range"
+                        :value="Rotate.currentValue"
+                        @input="Rotate.currentValue = $event.target.value"
+                        :min="Rotate.Min"
+                        :max="Rotate.Max"
+                        >
+                    </label>
                 </div>
 
                 <button @click="isCatVisible = !isCatVisible">
-                Показать / спрятать
+                     {{ isCatVisible ? 'Спрятать' : 'Показать' }}
                 </button>
             </div>
         </div>
@@ -80,7 +97,8 @@ export default {
             imgFilters: {
                 sepia: false,
                 border: false,
-                small: false
+                small: false,
+                shadow: false
             },
              imgSizes: {
                 minWidth: 100,
@@ -89,6 +107,11 @@ export default {
                 maxHeight: 480,
                 currentWidth: 680,
                 currentHeight: 480,
+            },
+            Rotate: {
+                currentValue: 0,
+                Max: 360,
+                Min: 0
             }
         }
     },
@@ -96,7 +119,8 @@ export default {
         imgStyles() {
             return {
                 width: `${this.imgSizes.currentWidth}px`,
-                height: `${this.imgSizes.currentHeight}px`
+                height: `${this.imgSizes.currentHeight}px`,
+                 transform: `rotate(${this.Rotate.currentValue}deg)`
             }
         }
     }
@@ -123,7 +147,7 @@ export default {
         padding: 6px 12px;
         cursor: pointer;
         transition: 0.1s ease;
-        margin-right: 10px;
+        margin-bottom: 10px;
     }
     button:hover,
     button:focus {
@@ -141,6 +165,8 @@ export default {
     }
     .btn-group {
         margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
     }
     img {
         transition: 0.2s ease;
@@ -154,5 +180,9 @@ export default {
     .small {
       width: 400px;
     }
+    .shadow {
+      box-shadow: 7px 7px 10px 0 #7e7e7e;
+    }
+
 
 </style>
