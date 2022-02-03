@@ -4,11 +4,8 @@
     <div class="top-information">
       <!-- <input :value="searchText" @change="searchText = $event.target.value"  /> -->
       <!-- <input v-model="searchText"  /> -->
-       <MyInput v-model="searchText"  />
-      {{searchText}}
-      <button>
-        Найти
-      </button>
+       <!-- <MyInput v-model="searchText" /> -->
+       <MyInput @search="searchProducts" />
     </div>
     
     <ul class="list-default flex">
@@ -37,7 +34,7 @@ export default {
   components: {ProductCard, MyInput},
   data() {
     return {
-      searchText: '',
+      // searchText: '',
       products: [
         {
           title: 'Стол Jim',
@@ -61,6 +58,9 @@ export default {
   methods: {
     addToBasket(index) {
       console.log(index)
+    },
+    searchProducts(searchText) {
+      console.log('Загрузить товары: ' + searchText)
     }
   }
 }
