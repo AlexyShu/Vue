@@ -90,7 +90,7 @@
 
 <script>
 export default {
-    name: "Lesence2",
+    name: "Lesson2",
     data() {
         return {
             isCatVisible: true,

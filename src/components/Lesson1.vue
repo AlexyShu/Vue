@@ -45,7 +45,7 @@
 
 <script>
 export default {
-    name: "Lesence1",
+    name: "Lesson1",
     data() {
         return {
             firstName: "Иван",
