@@ -5,7 +5,8 @@
     <!-- <HW1 /> -->
     <!-- <Lesson2 /> -->
     <!-- <ProductList /> -->
-    <Lesson4 />
+    <!-- <Lesson4 /> -->
+    <Lesson5 />
   </div>
 </template>
 
@@ -15,7 +16,8 @@
 // import HW1 from "./components/HW1";
 // import Lesson2 from "./components/Lesson2";
 // import ProductList from "./components/Lesson3/ProductList";
- import Lesson4 from "./components/Lesson4";
+//  import Lesson4 from "./components/Lesson4";
+import Lesson5 from "./components/Lesson5";
 
 export default {
   name: 'App',
@@ -25,7 +27,8 @@ export default {
     // HW1
     // Lesson2
     // ProductList
-     Lesson4
+    //  Lesson4
+    Lesson5
   }
 }
 </script>
