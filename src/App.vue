@@ -6,7 +6,8 @@
     <!-- <Lesson2 /> -->
     <!-- <ProductList /> -->
     <!-- <Lesson4 /> -->
-    <Lesson5 />
+    <!-- <Lesson5 /> -->
+    <UserPage />
   </div>
 </template>
 
@@ -17,7 +18,8 @@
 // import Lesson2 from "./components/Lesson2";
 // import ProductList from "./components/Lesson3/ProductList";
 //  import Lesson4 from "./components/Lesson4";
-import Lesson5 from "./components/Lesson5";
+// import Lesson5 from "./components/Lesson5";
+import UserPage from "./components/Lesson6/UserPage.vue";
 
 export default {
   name: 'App',
@@ -28,7 +30,8 @@ export default {
     // Lesson2
     // ProductList
     //  Lesson4
-    Lesson5
+    // Lesson5
+    UserPage
   }
 }
 </script>
