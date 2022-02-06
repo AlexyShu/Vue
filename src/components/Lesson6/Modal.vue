@@ -15,10 +15,14 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div
+        <!-- <div
           class="modal-body"
           ref="modalBody"
           @scroll="onBodyScroll"
+        > -->
+         <div
+          class="modal-body"
+          @scroll="onScroll"
         >
           <slot></slot>
         </div>
@@ -46,6 +50,8 @@
 </template>
 
 <script>
+import scrollHandler from "../../mixins/scrollHandler";
+
 export default {
   props: {
     title: {
@@ -58,24 +64,32 @@ export default {
       isRulesReaded: false
     }
   },
+  mixins: [scrollHandler],
   beforeCreate() {
     console.log('beforeCreate')
   },
-  mounted() {
-    const modalBody = this.$refs.modalBody;
-    modalBody.scrollTop = modalBody.scrollHeight - modalBody.clientHeight;
-  },
+//   created() {
+//       //plugin SimplePlugin
+//       this.$log();
+//   },
+//   mounted() {
+//     const modalBody = this.$refs.modalBody;
+//     modalBody.scrollTop = modalBody.scrollHeight - modalBody.clientHeight;
+//   },
   methods: {
     closeModal() {
       this.$emit('close')
     },
-    onBodyScroll() {
-      const modalBody = this.$refs.modalBody
-      if (modalBody.clientHeight + modalBody.scrollTop >= modalBody.scrollHeight) {
-        this.isRulesReaded = true
-      }
-    }
-  }
+    // onBodyScroll() {
+    //   const modalBody = this.$refs.modalBody
+    //   if (modalBody.clientHeight + modalBody.scrollTop >= modalBody.scrollHeight) {
+    //       this.isRulesReaded = true
+    //   }
+    // }
+    onScrollEnd() {
+        this.isRulesReaded = true;
+    },
+  },
 }
 </script>
 

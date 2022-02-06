@@ -7,6 +7,9 @@
     >
       Подробнее
     </button>
+    <textarea v-model="text"></textarea>
+    <!-- <div  :inner-html.prop="text | emoji | upperCase"></div> -->
+    <!-- {{ text | upperCase}} -->
     <modal
       v-if="isModalOpen"
       title="Пользовательское соглашение"
@@ -37,13 +40,31 @@ export default {
   components: { Modal },
   data() {
     return {
-      isModalOpen: false
+      isModalOpen: false,
+      text: ""
     }
   },
   methods: {
     openModal() {
       this.isModalOpen = true
     }
+  },
+  filters: {
+    upperCase(value) {
+      return value.toUpperCase()
+    },
+    emoji(value) {
+      return value.replace(':)', '😀')
+    }
   }
+
 }
 </script>
+
+<style scoped>
+    .user-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
