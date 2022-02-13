@@ -7,7 +7,11 @@
     <!-- <ProductList /> -->
     <!-- <Lesson4 /> -->
     <!-- <Lesson5 /> -->
-    <UserPage />
+    <!-- <UserPage /> -->
+    <!-- <InputDate /> -->
+    <!-- <Select /> -->
+    <!-- <InputSearch /> -->
+    <Inputs />
   </div>
 </template>
 
@@ -19,7 +23,13 @@
 // import ProductList from "./components/Lesson3/ProductList";
 //  import Lesson4 from "./components/Lesson4";
 // import Lesson5 from "./components/Lesson5";
-import UserPage from "./components/Lesson6/UserPage.vue";
+// import UserPage from "./components/Lesson6/UserPage.vue";
+// import InputDate from "./components/InputDate.vue"
+// import Select from "./components/Select.vue"
+// import InputSearch from "./components/InputSeach.vue"
+// import InputCheckbox from "./components/InputCheckbox.vue"
+import Inputs from "./components/Inputs.vue"
+
 
 export default {
   name: 'App',
@@ -31,7 +41,11 @@ export default {
     // ProductList
     //  Lesson4
     // Lesson5
-    UserPage
+    // UserPage
+    // InputDate
+    // Select
+    // InputSearch
+    Inputs
   }
 }
 </script>
